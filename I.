@@ -1,0 +1,47 @@
+// 1. Make an array containing at least 5 JavaScript objects
+let users = [
+  { id: 1, name: "Pau", age: 20, city: "Tgauig" },
+  { id: 2, name: "Justin", age: 24, city: "Cavite" },
+  { id: 3, name: "Kisses", age: 30, city: "Pasay" },
+  { id: 4, name: "Akiro", age: 15, city: "Pasig" },
+  { id: 5, name: "Cookie", age: 22, city: "Manila" }
+];
+
+// 2. Use the same array and use the forEach() method to print each object in the array
+console.log("Using forEach():");
+users.forEach(user => console.log(user));
+
+// 3. Use the same array and demonstrate a sample code using the push() method on the array
+console.log("\nUsing push():");
+users.push({ id: 6, name: "Faith", age: 24, city: "Bulacan" });
+console.log(users);
+
+// 4. Use the same array and demonstrate a sample code using the unshift() method on the array
+console.log("\nUsing unshift():");
+users.unshift({ id: 0, name: "Zack", age: 27, city: "Tagaytay" });
+console.log(users);
+
+// 5. Use the same array and demonstrate a sample code using the filter() method on the array
+console.log("\nUsing filter():");
+let youngUsers = users.filter(user => user.age < 25);
+console.log(youngUsers);
+
+// 6. Use the same array and demonstrate a sample code using the map() method on the array
+console.log("\nUsing map():");
+let userNames = users.map(user => user.name);
+console.log(userNames);
+
+// 7. Use the same array and demonstrate a sample code using the reduce() method on the array
+console.log("\nUsing reduce():");
+let totalAge = users.reduce((sum, user) => sum + user.age, 0);
+console.log("Total age of all users:", totalAge);
+
+// 8. Use the same array and demonstrate a sample code using the some() method on the array
+console.log("\nUsing some():");
+let hasManilaUser = users.some(user => user.city === "Manila");
+console.log("Has user from Manila?", hasManilaUser);
+
+// 9. Use the same array and demonstrate a sample code using the every() method on the array
+console.log("\nUsing every():");
+let allAbove18 = users.every(user => user.age >= 18);
+console.log("Are all users 18 or older?", allAbove18);
