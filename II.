@@ -1,0 +1,369 @@
+<!-- A -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asynchronous Programming</title>
+</head>
+<body>
+
+<h3>A. Greeting User Immediately</h3>
+
+<!-- Input and button -->
+<input type="text" id="nameA" placeholder="Enter your name">
+<button onclick="taskA()">Submit</button>
+<p id="resultA"></p>
+
+<script>
+
+// Have an input field asking for the user’s name. 
+// Create a Promise that rejects if that input field is empty, 
+// and resolves with the input, greeting the user with 
+// “good day, <name of user here>!” on the DOM.
+
+function taskA() {
+  const name = document.getElementById("nameA").value;
+  const result = document.getElementById("resultA");
+
+  // Promise starts here
+  new Promise((resolve, reject) => {
+    if (name.trim() === "") {
+      reject("Name cannot be empty!");
+    } else {
+      resolve(`Good day, ${name}!`);
+    }
+  })
+  .then(message => {
+    result.textContent = message;
+  })
+  .catch(error => {
+    result.textContent = error;
+  });
+}
+</script>
+
+</body>
+</html>
+
+<!-- B  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asynchronous Programming</title>
+</head>
+<body>
+
+<h3>B. Greeting User after 5 seconds</h3>
+
+<input type="text" id="nameB" placeholder="Enter your name">
+<button onclick="taskB()">Submit</button>
+<p id="resultB"></p>
+
+<script>
+
+// Have an input field asking for the user’s name.
+// Create a Promise that rejects if that input field is empty,
+// and resolves after 5 seconds with the input,
+// greeting the user with “good day, <name of user here>!” on the DOM.
+
+function taskB() {
+  const name = document.getElementById("nameB").value;
+  const result = document.getElementById("resultB");
+
+  new Promise((resolve, reject) => {
+    if (name.trim() === "") reject("Name cannot be empty!");
+    else setTimeout(() => resolve(`Good day, ${name}!`), 5000);
+  })
+  .then(msg => result.textContent = msg)
+  .catch(err => result.textContent = err);
+}
+</script>
+
+</body>
+</html>
+
+<!-- C -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asynchronous Programming</title>
+</head>
+<body>
+
+<h3>C. Greeting User after 7 seconds</h3>
+
+<input type="text" id="nameC" placeholder="Enter your name">
+<button onclick="taskC()">Submit</button>
+<p id="resultC"></p>
+
+<script>
+
+// Have an input field asking for the user’s name.
+// Create a Promise that rejects if that input field is empty,
+// and resolves after 7 seconds with the input,
+// greeting the user with “good day, <name of user here>!” on the DOM.
+
+function taskC() {
+  const name = document.getElementById("nameC").value;
+  const result = document.getElementById("resultC");
+
+  new Promise((resolve, reject) => {
+    if (name.trim() === "") reject("Name cannot be empty!");
+    else setTimeout(() => resolve(`Good day, ${name}!`), 7000);
+  })
+  .then(msg => result.textContent = msg)
+  .catch(err => result.textContent = err);
+}
+</script>
+
+</body>
+</html>
+
+<!-- D -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asynchronous Programming</title>
+</head>
+<body>
+
+<h3>D. Greeting User in Uppercase</h3>
+
+<input type="text" id="nameD" placeholder="Enter your name">
+<button onclick="taskD()">Submit</button>
+<p id="resultD"></p>
+
+<script>
+
+// We first have an input field asking for the user’s name.
+// Create a Promise that rejects if that input field is empty,
+// and resolves with the input being in uppercase format,
+// greeting the user with “good day, <name of user here>!” on the DOM.
+
+function taskD() {
+  const name = document.getElementById("nameD").value;
+  const result = document.getElementById("resultD");
+
+  new Promise((resolve, reject) => {
+    if (name.trim() === "") reject("Name cannot be empty!");
+    else resolve(`Good day, ${name.toUpperCase()}!`);
+  })
+  .then(msg => result.textContent = msg)
+  .catch(err => result.textContent = err);
+}
+</script>
+
+</body>
+</html>
+
+<!-- E -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asynchronous Programming</title>
+</head>
+<body>
+
+<h3>E. Greeting User in Uppercase (name ≥ 5 characters)</h3>
+
+<input type="text" id="nameE" placeholder="Enter your name">
+<button onclick="taskE()">Submit</button>
+<p id="resultE"></p>
+
+<script>
+
+// We first have an input field asking for the user’s name.
+// Create a Promise that rejects if that input field is empty
+// and is less than five characters,
+// and resolves with the input being in uppercase format,
+// greeting the user with “good day, <name of user here>!” on the DOM.
+
+function taskE() {
+  const name = document.getElementById("nameE").value;
+  const result = document.getElementById("resultE");
+
+  new Promise((resolve, reject) => {
+    if (name.trim() === "" || name.length < 5)
+      reject("Name must have at least 5 characters!");
+    else resolve(`Good day, ${name.toUpperCase()}!`);
+  })
+  .then(msg => result.textContent = msg)
+  .catch(err => result.textContent = err);
+}
+</script>
+
+</body>
+</html>
+
+<!-- F  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asynchronous Programming</title>
+</head>
+<body>
+
+<h3>F. Greeting User in Reversed Format</h3>
+
+<input type="text" id="nameF" placeholder="Enter your name">
+<button onclick="taskF()">Submit</button>
+<p id="resultF"></p>
+
+<script>
+
+// We first have an input field asking for the user’s name.
+// Create a Promise that rejects if that input field is empty
+// and is less than five characters,
+// and resolves with the input being in reversed format,
+// greeting the user with “good day, <name of user here>!” on the DOM.
+
+function taskF() {
+  const name = document.getElementById("nameF").value;
+  const result = document.getElementById("resultF");
+
+  new Promise((resolve, reject) => {
+    if (name.trim() === "" || name.length < 5)
+      reject("Name must have at least 5 characters!");
+    else {
+      const reversed = name.split("").reverse().join("");
+      resolve(`Good day, ${reversed}!`);
+    }
+  })
+  .then(msg => result.textContent = msg)
+  .catch(err => result.textContent = err);
+}
+</script>
+
+</body>
+</html>
+
+<!-- G -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asynchronous Programming</title>
+</head>
+<body>
+
+<h3>G. Squaring a Number</h3>
+
+<input type="text" id="numG" placeholder="Enter a number">
+<button onclick="taskG()">Submit</button>
+<p id="resultG"></p>
+
+<script>
+
+We first have an input field asking the user to input a number.
+Create a Promise that rejects if the inputted value is not an integer
+and resolves with the integer input being squared,
+printing the string “<number inputted> is <squared number> when doubled” on the DOM.
+
+function taskG() {
+  const num = document.getElementById("numG").value;
+  const result = document.getElementById("resultG");
+
+  new Promise((resolve, reject) => {
+    const intNum = parseInt(num);
+    if (isNaN(intNum)) reject("Input must be an integer!");
+    else resolve(`${intNum} is ${intNum ** 2} when doubled`);
+  })
+  .then(msg => result.textContent = msg)
+  .catch(err => result.textContent = err);
+}
+</script>
+
+</body>
+</html>
+
+<!-- H -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asynchronous Programming</title>
+</head>
+<body>
+
+<h3>H. Cubing a Number after 5 seconds</h3>
+
+<input type="text" id="numH" placeholder="Enter a number">
+<button onclick="taskH()">Submit</button>
+<p id="resultH"></p>
+
+<script>
+
+// We first have an input field asking the user to input a number.
+// Create a Promise that rejects if the inputted value is not an integer
+// and resolves after 5 seconds with the integer input being cubed,
+// printing the string “<number inputted> is <cubed number> when cubed” on the DOM.
+
+function taskH() {
+  const num = document.getElementById("numH").value;
+  const result = document.getElementById("resultH");
+
+  new Promise((resolve, reject) => {
+    const intNum = parseInt(num);
+    if (isNaN(intNum)) reject("Input must be an integer!");
+    else setTimeout(() => resolve(`${intNum} is ${intNum ** 3} when cubed`), 5000);
+  })
+  .then(msg => result.textContent = msg)
+  .catch(err => result.textContent = err);
+}
+</script>
+
+</body>
+</html>
+
+<!-- I -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asynchronous Programming</title>
+</head>
+<body>
+
+<h3>I. Check if Number is Between 1 and 10 (3 tries max)</h3>
+
+<input type="text" id="numI" placeholder="Enter a number">
+<button onclick="taskI()">Submit</button>
+<p id="resultI"></p>
+
+<script>
+
+// We first have an input field asking the user to input a number.
+// Create a Promise that rejects if the inputted value is not between 1 and 10
+// and resolves by printing the string “Yes <number inputted> is between 1 and 10” on the DOM.
+// If the user fails three times to give a number between 1 and 10,
+// we’ll just print “You already failed three times, so no chances anymore”.
+
+let failCount = 0;
+function taskI() {
+  const num = parseInt(document.getElementById("numI").value);
+  const result = document.getElementById("resultI");
+
+  new Promise((resolve, reject) => {
+    if (isNaN(num) || num < 1 || num > 10) {
+      failCount++;
+      if (failCount >= 3)
+        reject("You already failed three times, so no chances anymore");
+      else
+        reject("Number must be between 1 and 10!");
+    } else {
+      resolve(`Yes, ${num} is between 1 and 10`);
+      failCount = 0; // reset on success
+    }
+  })
+  .then(msg => result.textContent = msg)
+  .catch(err => result.textContent = err);
+}
+</script>
+
+</body>
+</html>
