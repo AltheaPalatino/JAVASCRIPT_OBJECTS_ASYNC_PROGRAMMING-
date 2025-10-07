@@ -138,7 +138,7 @@ function taskC() {
 
 <script>
 
-// We first have an input field asking for the user’s name.
+// Have an input field asking for the user’s name.
 // Create a Promise that rejects if that input field is empty,
 // and resolves with the input being in uppercase format,
 // greeting the user with “good day, <name of user here>!” on the DOM.
@@ -176,7 +176,7 @@ function taskD() {
 
 <script>
 
-// We first have an input field asking for the user’s name.
+// Have an input field asking for the user’s name.
 // Create a Promise that rejects if that input field is empty
 // and is less than five characters,
 // and resolves with the input being in uppercase format,
@@ -216,7 +216,7 @@ function taskE() {
 
 <script>
 
-// We first have an input field asking for the user’s name.
+// Have an input field asking for the user’s name.
 // Create a Promise that rejects if that input field is empty
 // and is less than five characters,
 // and resolves with the input being in reversed format,
@@ -259,10 +259,10 @@ function taskF() {
 
 <script>
 
-We first have an input field asking the user to input a number.
-Create a Promise that rejects if the inputted value is not an integer
-and resolves with the integer input being squared,
-printing the string “<number inputted> is <squared number> when doubled” on the DOM.
+// Have an input field asking the user to input a number.
+// Create a Promise that rejects if the inputted value is not an integer
+// and resolves with the integer input being squared,
+// printing the string “<number inputted> is <squared number> when doubled” on the DOM.
 
 function taskG() {
   const num = document.getElementById("numG").value;
@@ -298,7 +298,7 @@ function taskG() {
 
 <script>
 
-// We first have an input field asking the user to input a number.
+// Have an input field asking the user to input a number.
 // Create a Promise that rejects if the inputted value is not an integer
 // and resolves after 5 seconds with the integer input being cubed,
 // printing the string “<number inputted> is <cubed number> when cubed” on the DOM.
@@ -337,7 +337,7 @@ function taskH() {
 
 <script>
 
-// We first have an input field asking the user to input a number.
+// Have an input field asking the user to input a number.
 // Create a Promise that rejects if the inputted value is not between 1 and 10
 // and resolves by printing the string “Yes <number inputted> is between 1 and 10” on the DOM.
 // If the user fails three times to give a number between 1 and 10,
